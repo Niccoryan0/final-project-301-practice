@@ -68,4 +68,9 @@ $(() => {
     };
   }
 
+  // const hamburgerCheck = $('#hamburgerToggle > input');
+  // hamburgerCheck.on('click', () => {
+  //   $('nav > h1').hide();
+  // });
+
 });

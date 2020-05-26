@@ -48,6 +48,29 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+function JobCon(obj){
+  this.type = obj.type;
+  this.url = obj.url;
+  this.company = obj.company;
+  this.location = obj.location;
+  this.title = obj.title;
+  this.description = obj.description;
+  this.createdOn = obj.created_at;
+}
+
+app.get('/jobs',(req,res) => {
+  const userLang = req.body.userLang ? `description=${userLang}` : '';
+  const userLoc = req.body.userLoc ? req.body.userLoc : 'New York';
+  const apiUrl = `https://jobs.github.com/positions.json?${userLang}&location=${userLoc}&markdown=true`;
+
+  superagent.get(apiUrl)
+    .then(result => {
+      const jobsArr = result.body.map(val => new JobCon(val));
+      console.log(jobsArr);
+      // res.render('jobs', {jobs : result});
+    });
+});
+
 // function Weather(obj){
 //   this.forecast = obj.weather.description;
 //   this.time = new Date(obj.ts * 1000).toDateString();

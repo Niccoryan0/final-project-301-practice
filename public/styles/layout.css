@@ -9,15 +9,10 @@ body {
 
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   height: 60px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
 }
 
 nav > h1 {
@@ -70,7 +65,8 @@ section > div > div {
   align-self:flex-start;
 }
 
-#center > section {rgba(54, 100, 72, 0.85);
+#center > section {
+  background-color: rgba(54, 100, 72, 0.85);
   margin-bottom: 25px;
   height: 400px;
 }
@@ -179,7 +175,7 @@ ul {
 }
 
 #todoItems {
-  height: 310px;
+  height: 200px;
   overflow: auto;
   margin: 10px 10px 0;
 }
@@ -278,7 +274,7 @@ ul {
   display: flex;
   width: 210px;
   justify-content: space-between;
-  align-items: center;1035
+  align-items: center;
   top:-8px;
   right: 60px;
 }
@@ -304,7 +300,7 @@ ul {
 
 
 #hamburgerToggle input
-{1035
+{
   display: block;
   width: 40px;
   height: 32px;
@@ -391,7 +387,7 @@ ul {
 
 @media screen and (min-width:900px){
 
-  .widgetTray {
+  /* .widgetTray {
     display: block;
   }
   
@@ -403,17 +399,11 @@ ul {
     height:100px;
   }
 
-
-
-  #center > p {
-    font-size:18px;
-    color: white;
-  }
   
   .widgDiv {
     margin: 0 10px;
     width:30%;
-  }
+  } */
 
   #hamburgerToggle {
     visibility: hidden;
@@ -425,7 +415,7 @@ ul {
     width: 320px;
   }
   
-  #hamburgerToggle input:checked ~ #widgetBar{
+  /* #hamburgerToggle input:checked ~ #widgetBar{
     visibility: visible;
   }
 
@@ -450,7 +440,7 @@ ul {
   
   .addBtn:hover {
     background-color: #bbb;
-  }
+  } */
 
 }
 
