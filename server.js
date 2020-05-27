@@ -10,7 +10,6 @@ const superagent = require('superagent');
 const PORT = process.env.PORT;
 const app = express();
 
-
 // Config
 // const client = new pg.Client(process.env.DATABASE_URL);
 // client.on('error', console.error);
@@ -106,10 +105,10 @@ function NewsSearch(obj){
 
 }
 
-function Weather(obj){
-  this.forecast = obj.weather.description;
-  this.time = new Date(obj.ts * 1000).toDateString();
-}
+// function Weather(obj){
+//   this.forecast = obj.weather.description;
+//   this.time = new Date(obj.ts * 1000).toDateString();
+// }
 function JobCon(obj){
   this.type = obj.type;
   this.url = obj.url;
