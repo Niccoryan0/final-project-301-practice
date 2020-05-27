@@ -1,5 +1,4 @@
 ## Vision
-
 This product is designed to make navigating the web for information important to the user easier and faster. The application allows a user to view information such as daily weather, news headlines, developer jobs in the area, and stock information for companies relevant to them from one single hub page. By allowing a user to save time and get the information they desire more efficiently, it can cut down on time spent browsing to different sites and allow the user to stay up to date on all this information easily.
 
 
