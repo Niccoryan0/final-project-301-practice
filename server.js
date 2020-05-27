@@ -48,6 +48,68 @@ app.get('/about', (req, res) => {
   res.render('about');
 });
 
+app.get('/news', getHeadlineNews)
+
+app.put('/news/:type', getNewsSearch)
+
+function getHeadlineNews (req, res) {
+  const apiUrl = `https://api.nytimes.com/svc/topstories/v2/home.json`;
+  const queryParams = {
+    'api-key': process.env.NEWS_API_KEY
+  };
+
+  superagent.get(apiUrl)
+    .query(queryParams)
+    .then(result => {
+      const newNews = result.body.results.map(obj => new NewsHeadline(obj));
+      console.log(result.body.results);
+      res.render('news', {'news': newNews});
+    })  
+    .catch(error =>{
+      res.send(error).status(500);
+      console.log(error);
+    })
+}
+
+function getNewsSearch(req, res){
+  // const searchType = req.body.searchType;
+  // const apiUrl = `https://api.nytimes.com/svc/topstories/v2/${searchType}.json`
+  // const queryParams = {
+  //   'api-key': process.env.NEWS_API_KEY
+  // };
+
+  // superagent.get(apiUrl)
+  //   .query(queryParams)
+  //   .then(result => {
+  //     const newNews = result.body.results.map(obj => new NewsHeadline(obj));
+  //     res.render('news', {'news/:type': newNews});
+  //     console.log(result.body.response.docs);
+  //   })
+  //   .catch(error =>{
+  //   res.send(error).status(500);
+  //   console.log(error);
+  // });
+}
+
+function NewsSearch(obj) {
+
+}
+
+function NewsHeadline(obj){
+  this.title = obj.title ? obj.title: 'No Title Found';
+  this.byline = obj.byline ? obj.byline: 'No Author Found';
+  this.abstract = obj.abstract ? obj.abstract: 'No Description Found';
+  this.url = obj.url ? obj.url: 'No URL Found';
+}
+
+function NewsSearch(obj){
+
+}
+
+function Weather(obj){
+  this.forecast = obj.weather.description;
+  this.time = new Date(obj.ts * 1000).toDateString();
+}
 function JobCon(obj){
   this.type = obj.type;
   this.url = obj.url;
@@ -56,6 +118,7 @@ function JobCon(obj){
   this.title = obj.title;
   this.description = obj.description;
   this.createdOn = obj.created_at;
+
 }
 
 app.get('/jobs',(req,res) => {
