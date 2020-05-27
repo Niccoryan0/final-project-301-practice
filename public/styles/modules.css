@@ -8,6 +8,11 @@ nav {
   background-color: rgba(54, 100, 72, 0.85);
 }
 
+#center > p {
+  font-size:18px;
+  color: white;
+}
+
 #todoItems li {
   background: rgb(224, 224, 224);
   font-size: 18px;

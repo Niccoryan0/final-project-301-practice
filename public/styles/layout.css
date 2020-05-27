@@ -9,15 +9,10 @@ body {
 
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   height: 60px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
 }
 
 nav > h1 {
@@ -71,6 +66,7 @@ section > div > div {
 }
 
 #center > section {
+  background-color: rgba(54, 100, 72, 0.85);
   margin-bottom: 25px;
   height: 400px;
 }
@@ -171,7 +167,6 @@ input[type="radio"]:checked + .label:after {
   margin-bottom: 20px;
 }
 
-#todo > di
 
 /* Remove margins and padding from the list */
 ul {
@@ -180,7 +175,7 @@ ul {
 }
 
 #todoItems {
-  height: 310px;
+  height: 200px;
   overflow: auto;
   margin: 10px 10px 0;
 }
@@ -268,6 +263,8 @@ ul {
   transition: 0.3s;
   border-radius: 0;
 }
+
+/* END OF TODO LIST STYLES */
 
 
 /* Hamburger menu: */
@@ -378,19 +375,19 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(117, 43, 43, 0.8);
+  background: rgba(54, 100, 72, 0.85);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(68, 41, 41);
+  background: rgba(21, 155, 72, 0.95);
 }
 
 
 
 @media screen and (min-width:900px){
 
-  .widgetTray {
+  /* .widgetTray {
     display: block;
   }
   
@@ -402,17 +399,11 @@ ul {
     height:100px;
   }
 
-
-
-  #center > p {
-    font-size:18px;
-    color: white;
-  }
   
   .widgDiv {
     margin: 0 10px;
     width:30%;
-  }
+  } */
 
   #hamburgerToggle {
     visibility: hidden;
@@ -424,7 +415,7 @@ ul {
     width: 320px;
   }
   
-  #hamburgerToggle input:checked ~ #widgetBar{
+  /* #hamburgerToggle input:checked ~ #widgetBar{
     visibility: visible;
   }
 
@@ -449,7 +440,7 @@ ul {
   
   .addBtn:hover {
     background-color: #bbb;
-  }
+  } */
 
 }
 
